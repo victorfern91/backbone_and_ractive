@@ -11,6 +11,7 @@ require.config({
         'underscore': '../libs/underscore',
         'ractive': '../libs/ractive',
         'ractive-adaptors-backbone': '../libs/ractive-adaptors-backbone',
+        'ractive-transitions-fade': '../libs/ractive-transitions-fade.umd',
         'materialize': '../libs/materialize',
 
         // templates
@@ -33,7 +34,6 @@ require.config({
         //'text': '../libs/text',
         'rv': '../libs/rv'
     },
-
     shim: {
         'underscore': {
             'exports': '_'
@@ -42,7 +42,7 @@ require.config({
             'exports': '$, jQuery, jquery'
         },
         'backbone': {
-            'deps': ['underscore', 'jquery'],
+            'deps': ['underscore','jquery'],
             'exports': 'Backbone'
         },
         'materialize': {
@@ -50,7 +50,6 @@ require.config({
         }
     }
 });
-
 define(['app'], function (App) {
     'use strict';
     App.init();

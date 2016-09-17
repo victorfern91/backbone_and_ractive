@@ -3,7 +3,8 @@ define(function (require) {
     'use strict';
     var BaseView = require('baseView'),
         mainPage = require('rv!mainPageTmpl'),
-        helloComponent = require('rv!helloTmpl');
+        helloComponent = require('rv!helloTmpl'),
+        fade = require('ractive-transitions-fade');
 
     return BaseView.extend({
         initialize: function (args) {
@@ -15,7 +16,8 @@ define(function (require) {
         events: {
             'change .dropdown': 'getSelectOption',
             'click .save': 'save',
-            'click .undo': 'undo'
+            'click .undo': 'undo',
+            'click .remove': 'remove'
         },
 
         getSelectOption: function (evt) {
@@ -23,7 +25,7 @@ define(function (require) {
                     .find('[data-attribute]'),
                 attribute = $element.data('attribute');
 
-            if(attribute!== undefined) {
+            if (attribute !== undefined) {
                 this.ractive.set(attribute, $element.val());
             }
 
@@ -56,10 +58,18 @@ define(function (require) {
                 },
                 partials: {
                     helloPage: helloComponent
+                },
+                transitions: {
+                    fade: fade
                 }
             });
 
             this.updateRactiveModel(true);
+        },
+
+        onRemove: function () {
+            this.model.off();
+            this.cars.off();
         }
     });
 });

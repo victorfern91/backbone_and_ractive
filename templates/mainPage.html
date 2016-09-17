@@ -1,15 +1,16 @@
-<div>
+<div class="container">
     <h4>Form</h4>
     <div class="row">
         <div class="col s12">
             <input type="checkbox" id="isSaved" disabled checked="{{user.isSaved}}"/>
             <label for="isSaved"> Is model saved?</label>
         </div>
-        <div class="col s4">
-            <input type="text" value="{{user.name}}" />
+        <div class="col s12">
+            <input id="user-name" type="text" value="{{user.name}}">
+           <label {{#if user.name}}class="active"{{/if}} for="user-name">Your name</label>
         </div>
 
-        <div class="col s4">
+        <div class="col s12">
             <select class="dropdown" data-attribute="user.currentCar" value="{{user.currentCar}}">
                 <option selected disabled>Choose your vehicle</option>
                 {{#cars}}
@@ -19,10 +20,18 @@
         <label>Select your car</label>
   </div>
     </div>
-    {{#unless user.isSaved}}
-    <a class='save btn'>Save</a>
-    <a class='undo btn'>Undo</a>
-    {{/unless}}
+    <div class="center-align save-container">
+        {{#unless user.isSaved}}
+        <div intro-outro="fade:fast">
+            <a class='save btn'>Save</a>
+            <a class='undo btn'>Undo</a>
+        </div>
+        {{/unless}}
+    </div>
     <h4>Result</h4>
     {{> helloPage}}
+    <br />
+    <div>
+        <a class='remove btn'>Remove View</a>
+    </div>
 </div>

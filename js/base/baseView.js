@@ -12,7 +12,7 @@ define(function (require) {
                 adaptorBackbone = require('ractive-adaptors-backbone');
 
             this.ractive = null;
-            Ractive.DEBUG = false;
+            Ractive.DEBUG = true;
             adaptorBackbone.Backbone = Backbone;
             config.adapt = [adaptorBackbone];
             this.ractive = new Ractive(config);
@@ -26,6 +26,8 @@ define(function (require) {
                 this.ractive.teardown();
             }
 
+            this.undelegateEvents();
+            this.$el.removeData().unbind();
             Backbone.View.prototype.remove.call(this);
         }
     });
