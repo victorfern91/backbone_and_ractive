@@ -5,6 +5,8 @@ define(function (require) {
         Cars = require('carsCollection'),
         View = require('personView');
 
+        require('materialize');
+
     return {
         init: function () {
             var person = new Person({name: 'victor', age: '24', isSaved: true}),

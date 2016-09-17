@@ -1,18 +1,28 @@
 <div>
-    <h2>Form</h2>
-    <div>
-        <div>Please insert your name:</div>
-        <input class="inputs" type="text" value="{{user.name}}"/>
-        <input type="checkbox" disabled checked="{{user.isSaved}}"/>
-        <select class="inputs" value='{{user.currentCar}}'>
-            <option disabled>Select a car</option>
-            {{#cars}}
-                <option value='{{id}}' {{#if (user.currentCar === id)}}selected{{/if}}>{{name}}</option>
-            {{/cars}}
-        </select>
+    <h4>Form</h4>
+    <div class="row">
+        <div class="col s12">
+            <input type="checkbox" id="isSaved" disabled checked="{{user.isSaved}}"/>
+            <label for="isSaved"> Is model saved?</label>
+        </div>
+        <div class="col s4">
+            <input type="text" value="{{user.name}}" />
+        </div>
+
+        <div class="col s4">
+            <select class="dropdown" data-attribute="user.currentCar" value="{{user.currentCar}}">
+                <option selected disabled>Choose your vehicle</option>
+                {{#cars}}
+                    <option value='{{id}}' {{#if (user.currentCar === id)}}selected{{/if}}>{{name}}</option>
+                {{/cars}}
+            </select>
+        <label>Select your car</label>
+  </div>
     </div>
-    <button class='save'>Save</button>
-    <button class='undo'>Undo</button>
-    <h2>Result</h2>
+    {{#unless user.isSaved}}
+    <a class='save btn'>Save</a>
+    <a class='undo btn'>Undo</a>
+    {{/unless}}
+    <h4>Result</h4>
     {{> helloPage}}
 </div>

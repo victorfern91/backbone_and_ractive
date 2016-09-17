@@ -7,9 +7,9 @@ define(function (require) {
         defaults: {
             name: '',
             age: 0,
-            isSaved: false,
-            currentCar: '2',
-            availableCars: ['1', '3']
+            isSaved: true,
+            currentCar: '',
+            availableCars: ['1', '4']
         },
         url: function () {
             return '/data/person.json';

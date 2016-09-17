@@ -9,7 +9,8 @@ define(function (require) {
         url: function () {
             return '/data/cars.json';
         },
-        getCarNames: function (carIds) {
+
+        getCarInfo: function (carIds) {
             var i,
                 length,
                 carNames = [],
@@ -23,6 +24,14 @@ define(function (require) {
             }
 
             return carNames;
+        },
+
+        getCarName: function (carId) {
+            var car = this.find({id: carId});
+            if (car) {
+                return car.get('name');
+            }
+            return 'N.A.';
         }
     });
 });

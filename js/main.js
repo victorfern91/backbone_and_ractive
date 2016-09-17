@@ -11,6 +11,7 @@ require.config({
         'underscore': '../libs/underscore',
         'ractive': '../libs/ractive',
         'ractive-adaptors-backbone': '../libs/ractive-adaptors-backbone',
+        'materialize': '../libs/materialize',
 
         // templates
         'mainPageTmpl': '../templates/mainPage.html',
@@ -42,6 +43,9 @@ require.config({
         'backbone': {
             'deps': ['underscore', 'jquery'],
             'exports': 'Backbone'
+        },
+        'materialize': {
+            'deps': ['jquery']
         }
     }
 });

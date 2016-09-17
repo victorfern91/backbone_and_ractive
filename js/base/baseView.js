@@ -2,13 +2,15 @@
 define(function (require) {
     'use strict';
 
-    var Backbone = require('backbone'),
-        Ractive = require('ractive'),
-        adaptorBackbone = require('ractive-adaptors-backbone');
+    var Backbone = require('backbone');
+
 
     return Backbone.View.extend({
 
-        setRactive: function (config) {
+        configureRactive: function (config) {
+            var Ractive = require('ractive'),
+                adaptorBackbone = require('ractive-adaptors-backbone');
+
             this.ractive = null;
             Ractive.DEBUG = false;
             adaptorBackbone.Backbone = Backbone;
