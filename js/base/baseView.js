@@ -1,4 +1,7 @@
-define(function(require) {
+/*global define*/
+define(function (require) {
+    'use strict';
+
     var Backbone = require('backbone'),
         Ractive = require('ractive'),
         adaptorBackbone = require('ractive-adaptors-backbone');
@@ -17,7 +20,7 @@ define(function(require) {
             if (typeof this.onRemove === 'function') {
                 this.onRemove();
             }
-            if(this.ractive) {
+            if (this.ractive) {
                 this.ractive.teardown();
             }
 

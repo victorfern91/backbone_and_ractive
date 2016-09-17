@@ -19,6 +19,9 @@ require.config({
         // models
         'personModel': 'models/person',
 
+        // collections
+        'carsCollection': 'collections/cars',
+
         // baseView:
         'baseView': 'base/baseView',
 
