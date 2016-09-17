@@ -2,8 +2,8 @@
 define(function (require) {
     'use strict';
     var BaseView = require('baseView'),
-        mainPage = require('text!mainPageTmpl'),
-        helloComponent = require('text!helloTmpl');
+        mainPage = require('rv!mainPageTmpl'),
+        helloComponent = require('rv!helloTmpl');
 
     return BaseView.extend({
         initialize: function (args) {
