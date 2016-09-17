@@ -1,11 +1,18 @@
 <div>
-    <div>Please insert your name:</div>
-    <input type="text" value="{{user.name}}"/>
-    <input type="checkbox" checked="{{user.isSaved}}"/>
-    {{#if user.isSaved}}
-        {{> helloPage}}
-    {{/if}}
-    <div>Is saved? {{ isModelSaved }}</div>
+    <h2>Form</h2>
+    <div>
+        <div>Please insert your name:</div>
+        <input class="inputs" type="text" value="{{user.name}}"/>
+        <input type="checkbox" disabled checked="{{user.isSaved}}"/>
+        <select class="inputs" value='{{user.currentCar}}'>
+            <option disabled>Select a country</option>
+            {{#cars}}
+                <option value='{{id}}' {{#if (user.currentCar === id)}}selected{{/if}}>{{name}}</option>
+            {{/cars}}
+        </select>
+    </div>
     <button class='save'>Save</button>
     <button class='undo'>Undo</button>
+    <h2>Result</h2>
+    {{> helloPage}}
 </div>

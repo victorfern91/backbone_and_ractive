@@ -1,0 +1,8 @@
+{
+    "name": "Victor Fernandes",
+    "age": 24,
+    "born": "Chaves",
+    "currentCar": "3",
+    "availableCars": ["1", "3"],
+    "isSaved": true
+}
