@@ -14,8 +14,8 @@ require.config({
         'materialize': '../libs/materialize',
 
         // templates
-        'mainPageTmpl': '../templates/mainPage.html',
-        'helloTmpl': '../templates/hello.html',
+        'mainPageTmpl': '../templates/mainPage',
+        'helloTmpl': '../templates/hello',
 
         // models
         'personModel': 'models/person',
@@ -30,7 +30,8 @@ require.config({
         'personView': 'view/person',
 
         // require plugins
-        'text': '../libs/text'
+        //'text': '../libs/text',
+        'rv': '../libs/rv'
     },
 
     shim: {

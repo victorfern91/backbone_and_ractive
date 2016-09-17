@@ -19,6 +19,8 @@
         }
     },
 
+    stubModels : ['rv'],
+
     modules: [
         {
             name: 'main',
