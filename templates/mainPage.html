@@ -1,0 +1,11 @@
+<div>
+    <div>Please insert your name:</div>
+    <input type="text" value="{{user.name}}"/>
+    <input type="checkbox" checked="{{user.isSaved}}"/>
+    {{#if user.isSaved}}
+        {{> helloPage}}
+    {{/if}}
+    <div>Is saved? {{ isModelSaved }}</div>
+    <button class='save'>Save</button>
+    <button class='undo'>Undo</button>
+</div>
