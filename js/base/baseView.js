@@ -11,8 +11,12 @@ define(function (require) {
             var Ractive = require('ractive'),
                 adaptorBackbone = require('ractive-adaptors-backbone');
 
+            require('ractive-helpers');
+
             this.ractive = null;
-            Ractive.DEBUG = true;
+            Ractive.DEBUG = /unminified/.test(function () {
+                /*unminified*/
+            });
             adaptorBackbone.Backbone = Backbone;
             config.adapt = [adaptorBackbone];
             this.ractive = new Ractive(config);

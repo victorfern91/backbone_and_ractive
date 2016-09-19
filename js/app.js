@@ -9,7 +9,7 @@ define(function (require) {
 
     return {
         init: function () {
-            var person = new Person({name: 'victor', age: '24', isSaved: true}),
+            var person = new Person(),
                 cars = new Cars();
             cars.fetch({reset: true});
             cars.on('reset', function () {

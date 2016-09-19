@@ -18,6 +18,9 @@ require.config({
         'mainPageTmpl': '../templates/mainPage',
         'helloTmpl': '../templates/hello',
 
+        // helpers
+        'ractive-helpers': 'helpers/ractiveHelpers',
+
         // models
         'personModel': 'models/person',
 
